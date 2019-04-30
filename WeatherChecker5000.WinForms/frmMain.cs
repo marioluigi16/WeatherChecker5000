@@ -25,7 +25,7 @@ namespace WeatherChecker5000.WinForms
             cboCountry.DataSource = lstCountries;
             cboCountry.SelectedItem = "US"; //default to America
 
-            switch(mgrMeasurementUnits.g_MeasurementUnit)
+            switch (mgrMeasurementUnits.g_MeasurementUnit)
             {
                 case "F":
                     rdoUnitImp.Checked = true;
@@ -63,12 +63,8 @@ namespace WeatherChecker5000.WinForms
 
         private async void BtnSubmit_Click(object sender, EventArgs e)
         {
-            string errMsg;
-            if (!ValidateSubmitData(out errMsg))
-            {
-                MessageBox.Show(errMsg, "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (!ValidateSubmitData())
                 return;
-            }
 
             clsCity objCity = cboCity.SelectedItem as clsCity;
 
@@ -99,9 +95,9 @@ namespace WeatherChecker5000.WinForms
             cboCity.SelectedIndex = -1;
         }
 
-        private bool ValidateSubmitData(out string errMsg)
+        private bool ValidateSubmitData()
         {
-            errMsg = "";
+            string errMsg = "";
 
             if (cboCity.SelectedItem == null)
             {
@@ -114,6 +110,8 @@ namespace WeatherChecker5000.WinForms
                     errMsg = "Please enter a location first.";
                 }
 
+                MessageBox.Show(errMsg, "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 return false;
             }
 
@@ -122,6 +120,9 @@ namespace WeatherChecker5000.WinForms
 
         private void BtnDailyForecast_Click(object sender, EventArgs e)
         {
+            if (!ValidateSubmitData())
+                return;
+
             clsCity obj = cboCity.SelectedItem as clsCity;
 
             using (frmForecast frm = new frmForecast(obj.id))
@@ -138,7 +139,7 @@ namespace WeatherChecker5000.WinForms
             }
             catch
             {
-
+                mgrMeasurementUnits.g_MeasurementUnit = "F";
             }
         }
     }
