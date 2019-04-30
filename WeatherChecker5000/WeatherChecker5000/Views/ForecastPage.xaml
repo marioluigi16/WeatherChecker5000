@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherChecker5000.Views.ForecastPage" 
+             NavigationPage.HasBackButton="True"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- page heading -->
+            <Label Text="5 Day Forecast" FontSize="Large"/>
+            
+            <!-- forecast list -->
+            <ListView x:Name="lstForecast" 
+                    ItemsSource="{Binding lstForecast}">
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android">160</On> <!-- Rows were too small on Android -->
+                    </OnPlatform>
+                </ListView.RowHeight>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="10">
+                                <Label x:Name="lblDateTime" Text="{Binding dt_cs}" FontSize="Medium"/>
+                                <Label Grid.Row="2" Text="{Binding weather_desc}" FontSize="Small" BackgroundColor="BurlyWood"/>
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding wind.speed_txt}" FontSize="Small"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="{Binding rain.amt3h, StringFormat='Rain: {0}mm'}" FontSize="Small"/>
+                                <Label Grid.Row="2" Grid.Column="3" Text="{Binding snow.amt3h, StringFormat='Snow: {0}mm'}" FontSize="Small"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+
+            <Button Text="Back"
+                    Clicked="Button_Clicked"/>
+            
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
