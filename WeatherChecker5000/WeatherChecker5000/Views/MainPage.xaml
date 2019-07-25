@@ -7,14 +7,14 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Picker x:Name="pkrCountry"
-                Title="Select a country" 
+                Title="Select a Country" 
                 ItemsSource="{Binding lstCountries}"
                 SelectedItem="{Binding SelectedCountry}"
                 SelectedIndexChanged="CountryPicker_SelectedIndexChanged"/>
         
 
         <Picker x:Name="pkrCity"
-                Title="Select a city" 
+                Title="Select a City" 
                 ItemsSource="{Binding lstCities}"
                 ItemDisplayBinding="{Binding name}"
                 SelectedItem="{Binding SelectedCity}"/>
