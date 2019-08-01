@@ -47,16 +47,23 @@ namespace WeatherChecker5000.Managers
 
         private static string GetAPIMeasurementUnit()
         {
-            switch(mgrMeasurementUnits.g_MeasurementUnit)
+            try
             {
-                case "F":
-                    return "imperial";
-                case "C":
-                    return "metric";
-                case "K":
-                    return "kelvin";
-                default:    //shouldn't reach here, but just in case..
-                    return "imperial";
+                switch (mgrMeasurementUnits.g_MeasurementUnit)
+                {
+                    case "F":
+                        return "imperial";
+                    case "C":
+                        return "metric";
+                    case "K":
+                        return "kelvin";
+                    default:    //shouldn't reach here, but just in case..
+                        return "imperial";
+                }
+            }
+            catch
+            {
+                return "imperial";
             }
         }
 
