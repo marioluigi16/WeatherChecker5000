@@ -1,5 +1,6 @@
 ﻿using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using System;
 
 namespace WeatherChecker5000.Managers
 {
@@ -17,11 +18,22 @@ namespace WeatherChecker5000.Managers
         {
             get
             {
-                return mgrSettings.GetValueOrDefault("MeasurementUnit", "F");
+                try
+                {
+                    return mgrSettings.GetValueOrDefault("MeasurementUnit", "F");
+                }
+                catch (NotImplementedException)
+                {
+                    return "F";
+                }
             }
             set
             {
-                mgrSettings.AddOrUpdateValue("MeasurementUnit", value);
+                try
+                {
+                    mgrSettings.AddOrUpdateValue("MeasurementUnit", value);
+                }
+                catch { }
             }
         }
 
@@ -29,7 +41,7 @@ namespace WeatherChecker5000.Managers
         {
             get
             {
-                switch(g_MeasurementUnit)
+                switch (g_MeasurementUnit)
                 {
                     case "F":
                         return "F";

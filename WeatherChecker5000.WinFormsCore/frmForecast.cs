@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using WeatherChecker5000.Models.Forecast;
 
-namespace WeatherChecker5000.WinForms
+namespace WeatherChecker5000.WinFormsCore
 {
     public partial class frmForecast : Form
     {
@@ -25,7 +25,7 @@ namespace WeatherChecker5000.WinForms
         {
             label1.Text = obj.list[0].main.temp.ToString();
 
-            foreach(Forecast f in obj.list)
+            foreach (Forecast f in obj.list)
             {
                 frmForecastBox ffb = GenerateBox(f);
 
