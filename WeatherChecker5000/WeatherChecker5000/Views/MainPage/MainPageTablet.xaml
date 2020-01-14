@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherChecker5000.Views.MainPage.MainPageTablet">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="pkrCountry"
+                Title="Select a country" 
+                ItemsSource="{Binding lstCountries}"
+                SelectedItem="{Binding SelectedCountry}"
+                SelectedIndexChanged="CountryPicker_SelectedIndexChanged"/>
+
+
+            <Picker x:Name="pkrCity"
+                Title="Select a city" 
+                ItemsSource="{Binding lstCities}"
+                ItemDisplayBinding="{Binding name}"
+                SelectedItem="{Binding SelectedCity}">
+            </Picker>
+        </StackLayout>
+
+
+        <Button x:Name="btnSubmit"
+            Text="Submit" Clicked="btnSubmit_Clicked"/>
+
+
+        <Label x:Name="lblCurrentTemp"
+            Text="" />
+
+        <Label x:Name="lblCurrentWeatherDescription"
+            Text="" />
+
+        <Button x:Name="btnForecast"
+            Text="5 Day Forecast" Clicked="btnForecast_Clicked"/>
+    </StackLayout>
+</ContentPage>

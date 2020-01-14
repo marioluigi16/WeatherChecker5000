@@ -1,4 +1,5 @@
 ﻿using System;
+using WeatherChecker5000.Views.MainPage;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,10 @@ namespace WeatherChecker5000
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            if (Device.Idiom == TargetIdiom.Phone)
+                MainPage = new MainPage();
+            else
+                MainPage = new MainPageTablet();
         }
 
         protected override void OnStart()

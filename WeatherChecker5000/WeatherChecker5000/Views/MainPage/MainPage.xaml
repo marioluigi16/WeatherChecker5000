@@ -11,14 +11,15 @@
                 ItemsSource="{Binding lstCountries}"
                 SelectedItem="{Binding SelectedCountry}"
                 SelectedIndexChanged="CountryPicker_SelectedIndexChanged"/>
-        
+
 
         <Picker x:Name="pkrCity"
                 Title="Select a City" 
                 ItemsSource="{Binding lstCities}"
                 ItemDisplayBinding="{Binding name}"
-                SelectedItem="{Binding SelectedCity}"/>
-        
+                SelectedItem="{Binding SelectedCity}">
+        </Picker>
+
 
         <Button x:Name="btnSubmit"
             Text="Submit" Clicked="btnSubmit_Clicked"/>
