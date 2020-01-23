@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherChecker5000.Views.ForecastPage" 
              NavigationPage.HasBackButton="True"
-             Appearing="ContentPage_Appearing">
+             Appearing="ContentPage_Appearing"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <StackLayout>
             <!-- page heading -->
@@ -15,6 +18,7 @@
                 <ListView.RowHeight>
                     <OnPlatform x:TypeArguments="x:Int32">
                         <On Platform="Android">160</On> <!-- Rows were too small on Android -->
+                        <On Platform="iOS">260</On>
                     </OnPlatform>
                 </ListView.RowHeight>
 

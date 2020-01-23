@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WeatherChecker5000"
-             x:Class="WeatherChecker5000.MainPage">
+             x:Class="WeatherChecker5000.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true">
 
     <StackLayout>
         <!-- Place new controls here -->
@@ -22,7 +25,7 @@
 
 
         <Button x:Name="btnSubmit"
-            Text="Submit" Clicked="btnSubmit_Clicked"/>
+            Text="Submit" Clicked="BtnSubmit_Clicked"/>
 
 
         <Label x:Name="lblCurrentTemp"
@@ -32,7 +35,7 @@
             Text="" />
 
         <Button x:Name="btnForecast"
-            Text="5 Day Forecast" Clicked="btnForecast_Clicked"/>
+            Text="5 Day Forecast" Clicked="BtnForecast_Clicked"/>
     </StackLayout>
 
 </ContentPage>

@@ -17,7 +17,7 @@ namespace WeatherChecker5000.WinForms
 
         private async void GetForecast()
         {
-            var obj = await Managers.mgrHTTP.HTTPGet<objForecast>("forecast", cityID.ToString());
+            var obj = await Managers.MgrHTTP.HTTPGet<objForecast>("forecast", cityID.ToString());
             PopulateForm(obj);
         }
 

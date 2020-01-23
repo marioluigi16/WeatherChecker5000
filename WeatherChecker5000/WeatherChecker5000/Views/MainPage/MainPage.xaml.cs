@@ -20,11 +20,11 @@ namespace WeatherChecker5000
             BindingContext = new MainPageViewModel();
         }
 
-        private async void btnSubmit_Clicked(object sender, EventArgs e)
+        private async void BtnSubmit_Clicked(object sender, EventArgs e)
         {
             clsCity objCity = pkrCity.SelectedItem as clsCity;
 
-            OpenWeatherObj obj = await mgrHTTP.HTTPGet<OpenWeatherObj>("weather", objCity.id.ToString());
+            OpenWeatherObj obj = await MgrHTTP.HTTPGet<OpenWeatherObj>("weather", objCity.id.ToString());
 
             DisplayWeather(obj);
         }
@@ -41,7 +41,7 @@ namespace WeatherChecker5000
             pkrCity.ItemDisplayBinding = new Binding("name");
         }
 
-        private void btnForecast_Clicked(object sender, EventArgs e)
+        private void BtnForecast_Clicked(object sender, EventArgs e)
         {
             try
             {

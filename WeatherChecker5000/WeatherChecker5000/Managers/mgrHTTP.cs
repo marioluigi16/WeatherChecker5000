@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace WeatherChecker5000.Managers
 {
-    public static class mgrHTTP
+    public static class MgrHTTP
     {
         private const string API_BASIC_URL = "http://api.openweathermap.org/data/2.5/";
         private const string API_KEY = "&APPID=e4199d515d663e6fc93f7179635e361e";
