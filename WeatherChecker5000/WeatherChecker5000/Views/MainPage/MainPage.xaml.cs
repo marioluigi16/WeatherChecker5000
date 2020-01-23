@@ -25,6 +25,7 @@ namespace WeatherChecker5000
             clsCity objCity = pkrCity.SelectedItem as clsCity;
 
             OpenWeatherObj obj = await mgrHTTP.HTTPGet<OpenWeatherObj>("weather", objCity.id.ToString());
+
             DisplayWeather(obj);
         }
 

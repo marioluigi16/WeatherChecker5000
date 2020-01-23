@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-
+using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 
@@ -22,10 +24,42 @@ namespace WeatherChecker5000.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            /*
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
+            */
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        /// <summary>
+        // If there is an unhandled exception, the exception information is diplayed 
+        // on screen the next time the app is started (only in debug configuration)
+        /// </summary>
+        [Conditional("DEBUG")]
+        private static void DisplayCrashReport()
+        {
+            const string errorFilename = "Fatal.log";
+            var libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+            var errorFilePath = Path.Combine(libraryPath, errorFilename);
+
+            if (!File.Exists(errorFilePath))
+            {
+                return;
+            }
+
+            var errorText = File.ReadAllText(errorFilePath);
+            var alertView = new UIAlertView("Crash Report", errorText, null, "Close", "Clear") { UserInteractionEnabled = true };
+            alertView.Clicked += (sender, args) =>
+            {
+                if (args.ButtonIndex != 0)
+                {
+                    File.Delete(errorFilePath);
+                }
+            };
+            alertView.Show();
         }
     }
 }
