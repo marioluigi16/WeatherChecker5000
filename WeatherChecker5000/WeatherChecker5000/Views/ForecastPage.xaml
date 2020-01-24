@@ -6,7 +6,7 @@
              Appearing="ContentPage_Appearing"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              Title="Safe Area"
-             ios:Page.UseSafeArea="true">
+             ios:Page.UseSafeArea="True">
     <ContentPage.Content>
         <StackLayout>
             <!-- page heading -->

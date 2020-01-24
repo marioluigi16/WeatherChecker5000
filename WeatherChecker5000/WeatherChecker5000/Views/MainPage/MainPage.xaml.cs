@@ -37,7 +37,7 @@ namespace WeatherChecker5000
 
         private void CountryPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pkrCity.SetBinding(Picker.ItemsSourceProperty, "lstCities");
+            pkrCity.SetBinding(Picker.ItemsSourceProperty, "LstCities");
             pkrCity.ItemDisplayBinding = new Binding("name");
         }
 
