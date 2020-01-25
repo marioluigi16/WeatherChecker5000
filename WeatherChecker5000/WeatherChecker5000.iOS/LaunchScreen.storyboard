@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" launchScreen="YES" initialViewController="614">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="613">
+            <objects>
+                <viewController id="614" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="611"/>
+                        <viewControllerLayoutGuide type="bottom" id="612"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="615">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="642" translatesAutoresizingMaskIntoConstraints="NO" image="LaunchImages">
+                                <rect key="frame" x="60" y="96" width="200" height="288"/>
+                                <constraints>
+                                    <constraint id="681" firstAttribute="width" secondItem="642" secondAttribute="height" multiplier="25:36"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="675" firstItem="642" firstAttribute="top" secondItem="611" secondAttribute="bottom" constant="76"/>
+                            <constraint id="677" firstItem="612" firstAttribute="top" secondItem="642" secondAttribute="bottom" constant="96"/>
+                            <constraint id="679" firstItem="642" firstAttribute="leading" secondItem="615" secondAttribute="leadingMargin" constant="44"/>
+                            <constraint id="680" firstAttribute="trailingMargin" secondItem="642" secondAttribute="trailing" constant="44"/>
+                        </constraints>
+                    </view>
+                    <connections/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="616" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-315" y="-378"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchImages" width="750" height="750"/>
+    </resources>
+</document>
