@@ -78,6 +78,7 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="Managers\AuthBiometrics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
@@ -130,6 +131,15 @@
     <ImageAsset Include="Assets.xcassets\LaunchImages.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.imageset\img_249186_darkmode.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.imageset\img_249186_darkmode1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.imageset\img_249186_darkmode2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -153,4 +163,9 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarWeatherChecker5000iOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
