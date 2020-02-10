@@ -18,14 +18,15 @@ namespace WeatherChecker5000.WinForms
         private async void GetForecast()
         {
             var obj = await Managers.MgrHTTP.HTTPGet<objForecast>("forecast", cityID.ToString());
-            PopulateForm(obj);
+            if (obj != null)
+                PopulateForm(obj);
         }
 
         private void PopulateForm(objForecast obj)
         {
             label1.Text = obj.list[0].main.temp.ToString();
 
-            foreach(Forecast f in obj.list)
+            foreach (Forecast f in obj.list)
             {
                 frmForecastBox ffb = GenerateBox(f);
 
