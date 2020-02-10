@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace WeatherChecker5000.WinForms
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
         #region Constructor / Form Events
 
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -75,7 +75,7 @@ namespace WeatherChecker5000.WinForms
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         #endregion
@@ -97,10 +97,9 @@ namespace WeatherChecker5000.WinForms
 
         private bool ValidateSubmitData()
         {
-            string errMsg = "";
-
             if (cboCity.SelectedItem == null)
             {
+                string errMsg;
                 if (cboCity.Text.Trim() != "")
                 {
                     errMsg = "The entered city cannot be found! Please check your selection and try again.";
@@ -141,6 +140,17 @@ namespace WeatherChecker5000.WinForms
             {
                 mgrMeasurementUnits.g_MeasurementUnit = "F";
             }
+        }
+
+        private async void BtnPost_Click(object sender, EventArgs e)
+        {
+            TestThing obj = new TestThing
+            {
+                Foo1 = "Bar1",
+                Foo2 = "Bar2"
+            };
+
+            await MgrHTTP.HTTPPost(obj);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace WeatherChecker5000.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new FrmMain());
         }
     }
 }

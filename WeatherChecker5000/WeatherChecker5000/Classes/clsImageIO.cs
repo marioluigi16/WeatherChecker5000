@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace WeatherChecker5000.Classes
 {
-    class clsImageIO
+    class ClsImageIO
     {
         /*
         public async Image FetchImage(string path, string fileName)

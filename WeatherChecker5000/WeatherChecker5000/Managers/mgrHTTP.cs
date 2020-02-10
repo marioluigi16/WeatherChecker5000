@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -30,10 +30,10 @@ namespace WeatherChecker5000.Managers
                     response.EnsureSuccessStatusCode();
 
                     string json = Encoding.UTF8.GetString(response.Content.ReadAsByteArrayAsync().Result);
-                    return JsonConvert.DeserializeObject<T>(json);
+                    return JsonSerializer.Deserialize<T>(json);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 return default;
@@ -74,5 +74,37 @@ namespace WeatherChecker5000.Managers
                 await client.DownloadFileTaskAsync(url, Environment.CurrentDirectory + @"\Assets\" + fileName);
             }
         }
+
+        public static async Task<bool> HTTPPost(TestThing obj)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    string uri = "https://postman-echo.com/post";
+                    string json = JsonSerializer.Serialize(obj);
+                    HttpContent content = new StringContent(json);
+                    HttpResponseMessage response = await client.PostAsync(uri, content);
+                    response.EnsureSuccessStatusCode();
+
+                    string jsonResult = Encoding.UTF8.GetString(response.Content.ReadAsByteArrayAsync().Result);
+                    Debug.Print(jsonResult);
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        
+    }
+
+    public class TestThing
+    {
+        public string Foo1 { get; set; }
+        public string Foo2 { get; set; }
     }
 }
