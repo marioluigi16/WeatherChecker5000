@@ -6,14 +6,14 @@
         <StackLayout Orientation="Horizontal">
             <Picker x:Name="pkrCountry"
                 Title="Select a country" 
-                ItemsSource="{Binding lstCountries}"
+                ItemsSource="{Binding LstCountries}"
                 SelectedItem="{Binding SelectedCountry}"
                 SelectedIndexChanged="CountryPicker_SelectedIndexChanged"/>
 
 
             <Picker x:Name="pkrCity"
                 Title="Select a city" 
-                ItemsSource="{Binding lstCities}"
+                ItemsSource="{Binding LstCities}"
                 ItemDisplayBinding="{Binding name}"
                 SelectedItem="{Binding SelectedCity}">
             </Picker>

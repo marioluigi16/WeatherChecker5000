@@ -1,6 +1,6 @@
 ﻿namespace WeatherChecker5000.WinForms
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.cboCity = new System.Windows.Forms.ComboBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.lblCountry = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.btnDailyForecast = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -218,11 +219,23 @@
             this.btnDailyForecast.UseVisualStyleBackColor = true;
             this.btnDailyForecast.Click += new System.EventHandler(this.BtnDailyForecast_Click);
             // 
+            // btnPost
+            // 
+            this.btnPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPost.Location = new System.Drawing.Point(151, 408);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(135, 30);
+            this.btnPost.TabIndex = 10;
+            this.btnPost.Text = "POST TEST";
+            this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.BtnPost_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPost);
             this.Controls.Add(this.btnDailyForecast);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblCountry);
@@ -270,6 +283,7 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Button btnDailyForecast;
         private System.Windows.Forms.PictureBox pbWeatherIcon;
+        private System.Windows.Forms.Button btnPost;
     }
 }
 

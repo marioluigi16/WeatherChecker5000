@@ -8,7 +8,7 @@ namespace WeatherChecker5000.ViewModels
     {
         private const string DEFAULT_COUNTRY = "US";
 
-        public List<string> lstCountries { get; } = clsCityList.GetCountries();
+        public List<string> LstCountries { get; } = clsCityList.GetCountries();
 
         string selectedCountry = DEFAULT_COUNTRY;
         public string SelectedCountry
@@ -27,7 +27,7 @@ namespace WeatherChecker5000.ViewModels
 
 
         private List<clsCity> _lstCities;
-        public List<clsCity> lstCities
+        public List<clsCity> LstCities
         {
             get
             {

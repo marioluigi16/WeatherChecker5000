@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WeatherChecker5000.Managers;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace WeatherChecker5000.Models.Common
 {

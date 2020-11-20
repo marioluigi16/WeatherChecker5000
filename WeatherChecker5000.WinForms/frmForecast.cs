@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using WeatherChecker5000.Models.Forecast;
 
 namespace WeatherChecker5000.WinForms
@@ -25,15 +17,16 @@ namespace WeatherChecker5000.WinForms
 
         private async void GetForecast()
         {
-            var obj = await Managers.mgrHTTP.HTTPGet<objForecast>("forecast", cityID.ToString());
-            PopulateForm(obj);
+            var obj = await Managers.MgrHTTP.HTTPGet<objForecast>("forecast", cityID.ToString());
+            if (obj != null)
+                PopulateForm(obj);
         }
 
         private void PopulateForm(objForecast obj)
         {
             label1.Text = obj.list[0].main.temp.ToString();
 
-            foreach(Forecast f in obj.list)
+            foreach (Forecast f in obj.list)
             {
                 frmForecastBox ffb = GenerateBox(f);
 

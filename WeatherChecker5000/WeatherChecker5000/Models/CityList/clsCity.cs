@@ -1,5 +1,5 @@
 ﻿using WeatherChecker5000.Models.Common;
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +37,7 @@ namespace WeatherChecker5000.Models.CityList
             //encode the byte array into a readable string
             string strJson = Encoding.UTF8.GetString(cities);
 
-            List<clsCity> ret = JsonConvert.DeserializeObject<List<clsCity>>(strJson);
+            List<clsCity> ret = JsonSerializer.Deserialize<List<clsCity>>(strJson);
             ret = RemoveDuplicateCityNames(ret);
             return ret;
         }
